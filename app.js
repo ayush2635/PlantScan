@@ -90,7 +90,7 @@ app.post("/download", express.json(), async (req, res) => {
 
     doc.moveDown(2);
     let tempImagePath = null;
-
+    doc.addPage();
     if (image) {
       const match = image.match(/^data:image\/(png|jpeg|jpg);base64,(.+)$/i);
       if (!match) throw new Error("Invalid base64 image format");
