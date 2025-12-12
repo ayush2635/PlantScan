@@ -34,7 +34,7 @@ app.post("/analyse", upload.single("image"), async (req, res) => {
   try {
     const imageData = await fsPromises.readFile(imagePath, { encoding: "base64" });
 
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const result = await model.generateContent([
       "Analyze this plant image and provide detailed analysis of its species, health, and care recommendations, its characteristics, care instructions, and any interesting facts. Please provide the response in plain text without using any markdown formatting.",
